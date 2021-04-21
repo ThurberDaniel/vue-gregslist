@@ -2,9 +2,9 @@
   <div>
     <h1>House Page vue</h1>
     <button>Add New House</button>
-  </div>
 
-  <House v-for="house in state.houses" :key="house.id" :house="house" />
+    <p><House v-for="house in state.houses" :key="house.id" :house="house" /></p>
+  </div>
 </template>
 
 <script>
@@ -24,7 +24,7 @@ export default {
       try {
         await housesService.getHouses()
       } catch (error) {
-        // console.error(error)
+        console.error(error)
       }
     })
     return {
